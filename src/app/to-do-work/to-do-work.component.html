@@ -1,0 +1,20 @@
+<div>
+    <div>
+        <p *ngFor="let toDo of toDos">
+            {{toDo.work}}
+            <button type="submit" class="btn btn-primary" (click)="onEdit(toDo.id)">Edit</button>
+            <button type="submit" class="btn btn-primary" (click)="onDelete(toDo.id)">Delete</button>
+        </p>
+    </div>
+    <div>
+        <h1>Form</h1>
+        <form  [formGroup]="newForm">
+            <div class="form-group">
+                <label for="work">Add work</label>
+                <input type="text" class="form-control" id="work" formControlName="work" placeholder="Add new entry">
+            </div>
+            <button type="submit" class="btn btn-primary"  (click)="addWork()">Submit</button>
+            
+        </form>
+      </div>
+</div>
